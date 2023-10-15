@@ -15,7 +15,7 @@ public class filosofos extends jantar {
         direita = thread[(id + 1) % tamanhoMesa];
     }
 
-    public void eat() throws Exception {
+    public void comer() throws Exception {
         System.out.println("Filosofos " + id + " está pensando");
         try {
             Thread.sleep((long) (Math.random() * 1000));
@@ -43,7 +43,7 @@ public class filosofos extends jantar {
     public void run() {
         while (true) {
             try {
-                eat();
+                comer();
             } catch (Exception e) {
 
                 e.printStackTrace();
