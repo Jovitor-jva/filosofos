@@ -16,7 +16,10 @@ public class filosofos extends jantar {
     }
 
     public void comer() throws Exception {
-        System.out.println("Filosofos " + id + " está pensando");
+        System.out.println("Filosofos " + id +
+                " está pensando");
+        String message = "Filosofo " + id +
+                " está comendo seu prato de macarrão";
         try {
             Thread.sleep((long) (Math.random() * 1000));
         } catch (InterruptedException e) {
@@ -29,7 +32,7 @@ public class filosofos extends jantar {
             direita.lock();
             esquerda.lock();
         }
-        System.out.println("Filosofo " + id + " está comendo seu prato de macarrão");
+        System.out.println(message);
         try {
             Thread.sleep((long) (Math.random() * 1000));
         } catch (InterruptedException e) {
@@ -45,7 +48,6 @@ public class filosofos extends jantar {
             try {
                 comer();
             } catch (Exception e) {
-
                 e.printStackTrace();
             }
         }
