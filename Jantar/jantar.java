@@ -8,11 +8,11 @@ public class jantar extends Thread {
 
     protected static int tamanhoMesa = 5;
     static filosofos[] filosofo = new filosofos[tamanhoMesa];
-    protected static ReentrantLock[] thread = new ReentrantLock[tamanhoMesa];
+    protected static ReentrantLock[] threadPersistente = new ReentrantLock[tamanhoMesa];
 
     public static void main(String[] args) {
         for (int i = 0; i < tamanhoMesa; i++) {
-            thread[i] = new ReentrantLock();
+            threadPersistente[i] = new ReentrantLock();
         }
 
         for (int i = 0; i <= tamanhoMesa; i++) {

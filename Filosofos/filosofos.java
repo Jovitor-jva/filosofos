@@ -11,15 +11,16 @@ public class filosofos extends jantar {
 
     public filosofos(int id) {
         this.id = id + 1;
-        esquerda = thread[id];
-        direita = thread[(id + 1) % tamanhoMesa];
+        esquerda = threadPersistente[id];
+        direita = threadPersistente[(id + 1) % tamanhoMesa];
     }
 
     public void comer() throws Exception {
-        System.out.println("Filosofos " + id +
-                " está pensando");
+        String iniciar = "Filosofos " + id +
+                " está pensando";
         String message = "Filosofo " + id +
                 " está comendo seu prato de macarrão";
+        System.out.println(iniciar);
         try {
             Thread.sleep((long) (Math.random() * 1000));
         } catch (InterruptedException e) {
